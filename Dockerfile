@@ -22,6 +22,7 @@ RUN apt-get update \
 
         # Install Atom editor and dependencies
         git \
+        wget \
         curl \
         ca-certificates \
         libgtk2.0-0 \
