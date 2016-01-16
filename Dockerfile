@@ -24,6 +24,7 @@ RUN apt-get update \
         git \
         wget \
         curl \
+        nodejs \
         ca-certificates \
         libgtk2.0-0 \
         libxtst6 \
