@@ -19,7 +19,7 @@ RUN apt-get update \
         gtk2-engines-murrine ttf-ubuntu-font-family \
         fonts-wqy-microhei \
         mesa-utils libgl1-mesa-dri \
-        
+
         #Install Node.js and npm
         nodejs npm \
 
@@ -50,7 +50,7 @@ RUN apt-get update \
     && rm -f /tmp/atom.deb \
 
     # Create a symlink to nodejs
-    ln -s /usr/bin/nodejs /usr/bin/node \
+    && ln -s /usr/bin/nodejs /usr/bin/node \
 
     # Cleanup everything
 
