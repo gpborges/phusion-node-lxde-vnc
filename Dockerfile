@@ -19,14 +19,17 @@ RUN apt-get update \
         gtk2-engines-murrine ttf-ubuntu-font-family \
         fonts-wqy-microhei \
         mesa-utils libgl1-mesa-dri \
+        
+        #Install Node.js and npm
+        nodejs npm \
+
+        # Install Firefox
+        firefox \
 
         # Install Atom editor and dependencies
         git \
         wget \
         curl \
-        nodejs \
-        npm \
-        firefox \
         ca-certificates \
         libgtk2.0-0 \
         libxtst6 \
@@ -69,7 +72,7 @@ ADD startup.sh /
 ADD supervisord.conf /etc/supervisor/conf.d/
 ADD doro-lxde-wallpapers /usr/share/doro-lxde-wallpapers/
 
-#Expose VNC/NODE ports
+#Expose VNC and Node ports
 EXPOSE 5900
 EXPOSE 3000
 
