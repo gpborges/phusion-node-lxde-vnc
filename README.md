@@ -1,25 +1,30 @@
-docker-ubuntu-vnc-desktop
-=========================
+phusion-node-lxde-vnc
+=====================
 
-From Docker Index
+This image is a fork of https://github.com/fcwu/docker-ubuntu-vnc-desktop.git
+
+The following changes were applied:
+
+- Removed noVNC and dependencies
+- Tweaked supervisor, removing unecessary code after removing noVNC
+- Added Node.js
+- Added Atom editor
+
+From Docker Hub
 ```
-docker pull dorowu/ubuntu-desktop-lxde-vnc
+docker pull gpborges/ubuntu-desktop-lxde-vnc
 ```
 
 Build yourself
 ```
-git clone https://github.com/fcwu/docker-ubuntu-vnc-desktop.git
-docker build --rm -t dorowu/ubuntu-desktop-lxde-vnc docker-ubuntu-vnc-desktop
+git clone https://github.com/gpborges/phusion-node-lxde-vnc.git
+docker build --rm -t gpborges/phusion-node-lxde-vnc phusion-node-lxde-vnc
 ```
 
 Run
 ```
-docker run -i -t -p 6080:6080 dorowu/ubuntu-desktop-lxde-vnc
+docker run -i -t -p 5900:5900 gpborges/phusion-node-lxde-vnc
 ```
-
-Browse http://127.0.0.1:6080/vnc.html
-
-<img src="https://raw.github.com/fcwu/docker-ubuntu-vnc-desktop/master/screenshots/lxde.png" width=400/>
 
 
 Troubleshooting

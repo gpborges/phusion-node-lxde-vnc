@@ -54,14 +54,7 @@ RUN apt-get update \
     && cd /tmp \
     && rm -rf /tmp/node-v* \
     && npm install -g npm \
-    && printf '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc \
-
-    # Cleanup everything
-
-    && apt-get clean \
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/*
+    && printf '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
 
 ADD https://dl.dropboxusercontent.com/u/23905041/x11vnc_0.9.14-1.1ubuntu1_amd64.deb /tmp/
 ADD https://dl.dropboxusercontent.com/u/23905041/x11vnc-data_0.9.14-1.1ubuntu1_all.deb /tmp/
