@@ -64,9 +64,9 @@ ADD https://dl.dropboxusercontent.com/u/23905041/x11vnc-data_0.9.14-1.1ubuntu1_a
 RUN dpkg -i /tmp/x11vnc*.deb
 
 RUN git clone https://github.com/mirolima/lab3865app.git \
-  cd lab3865app \
-  npm install \
-  node app
+  && cd lab3865app \
+  && npm install \
+  && node app
 
 ADD startup.sh /
 ADD supervisord.conf /etc/supervisor/conf.d/
