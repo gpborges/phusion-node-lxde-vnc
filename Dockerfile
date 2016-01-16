@@ -25,6 +25,7 @@ RUN apt-get update \
         wget \
         curl \
         nodejs \
+        npm \
         ca-certificates \
         libgtk2.0-0 \
         libxtst6 \
@@ -43,6 +44,9 @@ RUN apt-get update \
     && curl -L https://github.com/atom/atom/releases/download/${ATOM_VERSION}/atom-amd64.deb > /tmp/atom.deb \
     && dpkg -i /tmp/atom.deb \
     && rm -f /tmp/atom.deb \
+
+    # Create a symlink to nodejs
+    ln -s /usr/bin/nodejs /usr/bin/node
 
     # Cleanup everything
 
