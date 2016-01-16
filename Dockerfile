@@ -47,7 +47,7 @@ RUN apt-get update \
     && rm -f /tmp/atom.deb \
 
     # Create a symlink to nodejs
-    ln -s /usr/bin/nodejs /usr/bin/node
+    ln -s /usr/bin/nodejs /usr/bin/node \
 
     # Cleanup everything
 
@@ -69,7 +69,7 @@ ADD startup.sh /
 ADD supervisord.conf /etc/supervisor/conf.d/
 ADD doro-lxde-wallpapers /usr/share/doro-lxde-wallpapers/
 
-#Expose VNC port
+#Expose VNC/NODE ports
 EXPOSE 5900
 EXPOSE 3000
 
