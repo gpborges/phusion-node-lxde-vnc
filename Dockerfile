@@ -48,6 +48,25 @@ RUN apt-get update \
     # Create a symlink to nodejs
     ln -s /usr/bin/nodejs /usr/bin/node
 
+# Install Firefox
+COPY AptSources /etc/apt/sources.list.d/
+
+ENV FIREFOXVERSION 43.0+build1-0ubuntu0.14.04.1
+
+RUN useradd -m firefox; \
+    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections; \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends  firefox=$FIREFOXVERSION \
+                                                dbus-x11 \
+                                                adobe-flashplugin \
+                                                libxext-dev \
+                                                libxrender-dev \
+                                                libxtst-dev \
+                                                oracle-java8-installer \
+                                                oracle-java8-set-default; \
+    
+
     # Cleanup everything
 
     && apt-get clean \
