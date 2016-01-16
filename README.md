@@ -18,7 +18,7 @@ docker pull gpborges/ubuntu-desktop-lxde-vnc
 Build yourself
 ```
 git clone https://github.com/gpborges/phusion-node-lxde-vnc.git
-docker build --rm -t gpborges/phusion-node-lxde-vnc phusion-node-lxde-vnc
+docker build -t gpborges/phusion-node-lxde-vnc .
 ```
 
 Run
