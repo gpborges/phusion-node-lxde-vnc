@@ -59,12 +59,18 @@ ADD https://dl.dropboxusercontent.com/u/23905041/x11vnc_0.9.14-1.1ubuntu1_amd64.
 ADD https://dl.dropboxusercontent.com/u/23905041/x11vnc-data_0.9.14-1.1ubuntu1_all.deb /tmp/
 RUN dpkg -i /tmp/x11vnc*.deb
 
+RUN git clone https://github.com/mirolima/lab3865app.git \
+  cd lab3865app \
+  npm install \
+  node app
+
 ADD startup.sh /
 ADD supervisord.conf /etc/supervisor/conf.d/
 ADD doro-lxde-wallpapers /usr/share/doro-lxde-wallpapers/
 
 #Expose VNC port
 EXPOSE 5900
+EXPOSE 3000
 
 # Define working directory.
 WORKDIR /data
