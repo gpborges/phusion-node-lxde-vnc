@@ -21,9 +21,19 @@ git clone https://github.com/gpborges/phusion-node-lxde-vnc.git
 docker build -t gpborges/phusion-node-lxde-vnc .
 ```
 
-Run
+Run the container in a detached mode (in background):
 ```
 docker run -d -p 5900:5900 -p 3000:3000 gpborges/phusion-node-lxde-vnc
+```
+
+Run the container and jump to an interactive tty:
+```
+docker run -i -t -p 5900:5900 -p 3000:3000 gpborges/phusion-node-lxde-vnc
+```
+
+Mount /tmp directory from the host machine (or any other directory) to the /data mounting point available at the container.
+```
+docker run -d -p 5900:5900 -p 3000:3000 -v /tmp:/data gpborges/phusion-node-lxde-vnc
 ```
 
 <img src="https://raw.github.com/gpborges/phusion-node-lxde-vnc/master/screenshots/phusion-node-lxde-vnc-desktop.png" width=400/>
