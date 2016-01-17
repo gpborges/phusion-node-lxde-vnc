@@ -12,7 +12,7 @@ The following changes were applied:
 
 From Docker Hub
 ```
-docker pull gpborges/ubuntu-desktop-lxde-vnc
+docker pull gpborges/gpborges/phusion-node-lxde-vnc
 ```
 
 Build yourself
@@ -23,8 +23,10 @@ docker build -t gpborges/phusion-node-lxde-vnc .
 
 Run
 ```
-docker run -i -t -p 5900:5900 gpborges/phusion-node-lxde-vnc
+docker run -d -p 5900:5900 -p 3000:3000 gpborges/phusion-node-lxde-vnc
 ```
+
+<img src="https://raw.github.com/gpborges/phusion-node-lxde-vnc/master/screenshots/phusion-node-lxde-vnc-desktop.png" width=400/>
 
 
 Troubleshooting
